@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #0A0A0A;
+  --text-primary: #FFFFFF;
+  --text-secondary: #86868b;
+  --accent-glow: #2997ff;
+  --accent-purple: #bf5af2;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  body {
+    @apply text-primary antialiased selection:bg-accent-glow/30 selection:text-white;
+    font-feature-settings: "cv05", "cv11", "ss01";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tight font-semibold;
+  }
+}
+
+@layer utilities {
+  .container-custom {
+    @apply max-w-[1200px] mx-auto px-6;
+  }
+
+  /* 🍎 Apple-style Glass */
+  .glass-panel {
+    @apply bg-surface/60 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl transition-all duration-300;
+  }
+
+  .glass-panel:hover {
+    @apply border-white/20 bg-surface/80;
+  }
+
+  /* ⚡ Subtle Glow */
+  .text-glow {
+    text-shadow: 0 0 30px rgba(41, 151, 255, 0.5);
+  }
+
+  /* 🌌 Nebula Gradient Text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/50;
+  }
+
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-glow to-accent-purple;
+  }
+}
