@@ -69,18 +69,18 @@ const skillCategories = [
 
 export default function Skills() {
     return (
-        <section id="skills" className="py-32 px-6 relative z-10">
+        <section id="skills" className="py-20 md:py-32 px-6 relative z-10">
             <div className="max-w-7xl mx-auto">
 
                 <ScrollAnimation>
-                    <div className="mb-20">
-                        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
-                            CORE{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
+                    <div className="mb-12 md:mb-20 text-center">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">
+                            CORE <br className="md:hidden" />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
                                 SKILLS
                             </span>
                         </h2>
-                        <p className="text-slate-400 max-w-2xl text-lg font-light">
+                        <p className="text-slate-400 max-w-2xl md:mx-auto text-base md:text-lg font-light">
                             A compact snapshot of tools and technologies I use to build stable, scalable automation.
                         </p>
                     </div>

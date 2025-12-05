@@ -64,19 +64,17 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section id="projects" className="py-32 px-6 relative z-10">
+        <section id="projects" className="py-20 md:py-32 px-6 relative z-10">
             <div className="max-w-7xl mx-auto">
 
                 <ScrollAnimation>
-                    <div className="mb-20 flex items-end justify-between flex-wrap gap-4">
-                        <div>
-                            <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
-                                FEATURED <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">PROJECTS</span>
-                            </h2>
-                            <p className="text-slate-400 max-w-2xl text-lg font-light">
-                                With depth + impact + tech stack
-                            </p>
-                        </div>
+                    <div className="mb-12 md:mb-20 text-center">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight">
+                            FEATURED <br className="md:hidden" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">PROJECTS</span>
+                        </h2>
+                        <p className="text-slate-400 max-w-2xl md:mx-auto text-base md:text-lg font-light">
+                            With depth + impact + tech stack
+                        </p>
                     </div>
                 </ScrollAnimation>
 

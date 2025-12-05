@@ -27,15 +27,15 @@ const achievements = [
 
 export default function Achievements() {
     return (
-        <section id="achievements" className="py-32 px-6 relative z-10">
+        <section id="achievements" className="py-20 md:py-32 px-6 relative z-10">
             <div className="max-w-5xl mx-auto">
 
                 <ScrollAnimation>
-                    <div className="mb-20 text-center">
-                        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
-                            KEY <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">ACHIEVEMENTS</span>
+                    <div className="mb-12 md:mb-20 text-center">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">
+                            KEY <br className="md:hidden" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">ACHIEVEMENTS</span>
                         </h2>
-                        <p className="text-slate-400 text-lg font-light">
+                        <p className="text-slate-400 text-base md:text-lg font-light">
                             Impact that recruiters love — measurable results in quality engineering.
                         </p>
                     </div>

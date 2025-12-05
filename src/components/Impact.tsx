@@ -37,20 +37,20 @@ const metrics = [
 
 export default function Impact() {
     return (
-        <section id="impact" className="py-32 px-6 relative z-10">
+        <section id="impact" className="py-20 md:py-32 px-6 relative z-10">
             <div className="max-w-6xl mx-auto">
 
                 {/* Header */}
                 <ScrollAnimation>
-                    <div className="text-center mb-20">
-                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
-                            MEASURABLE{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                    <div className="text-center mb-12 md:mb-20">
+                        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+                            MEASURABLE <br className="md:hidden" />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
                                 IMPACT
                             </span>
                         </h2>
 
-                        <p className="text-slate-400 text-lg max-w-2xl mx-auto mt-4">
+                        <p className="text-slate-400 text-base md:text-lg max-w-2xl md:mx-auto mt-4">
                             Practical improvements achieved through clean automation, stable execution, and reliable pipelines.
                         </p>
                     </div>

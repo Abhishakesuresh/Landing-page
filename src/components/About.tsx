@@ -3,16 +3,16 @@ import ScrollAnimation from "./ScrollAnimation";
 
 export default function About() {
     return (
-        <section id="about" className="py-32 px-6 relative z-10">
+        <section id="about" className="py-20 md:py-32 px-6 relative z-10">
             <div className="max-w-5xl mx-auto">
 
                 {/* Section Header */}
                 <ScrollAnimation>
-                    <div className="mb-16">
-                        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
-                            ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">ME</span>
+                    <div className="mb-12 md:mb-16 text-center">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">
+                            ABOUT <br className="md:hidden" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">ME</span>
                         </h2>
-                        <p className="text-slate-400 max-w-2xl text-lg font-light">
+                        <p className="text-slate-400 max-w-2xl md:mx-auto text-base md:text-lg font-light">
                             I build clean, stable, and reliable automation that helps teams move faster with confidence.
                         </p>
                     </div>

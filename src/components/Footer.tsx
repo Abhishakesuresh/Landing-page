@@ -31,9 +31,8 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="relative z-10 bg-black/80 backdrop-blur-xl">
-            {/* Gradient separator */}
-            <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
+        <footer className="relative z-10 bg-black">
+
 
             <div className="max-w-6xl mx-auto px-4 py-6 md:px-6 md:py-10">
                 {/* Compact single row on mobile, expanded on desktop */}

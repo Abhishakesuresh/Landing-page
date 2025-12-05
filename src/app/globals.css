@@ -42,11 +42,11 @@ html {
 
   /* 🍎 Apple-style Glass */
   .glass-panel {
-    @apply bg-surface/60 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl transition-all duration-300;
+    @apply bg-black/30 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl transition-all duration-300;
   }
 
   .glass-panel:hover {
-    @apply border-white/20 bg-surface/80;
+    @apply border-white/20 bg-black/40;
   }
 
   /* ⚡ Subtle Glow */

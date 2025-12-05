@@ -27,15 +27,15 @@ const principles = [
 
 export default function Collaboration() {
     return (
-        <section id="collaboration" className="py-32 px-6 relative z-10">
+        <section id="collaboration" className="py-20 md:py-32 px-6 relative z-10">
             <div className="max-w-5xl mx-auto">
 
                 <ScrollAnimation>
-                    <div className="mb-20">
-                        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
-                            WORK <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">PRINCIPLES</span>
+                    <div className="mb-12 md:mb-20 text-center">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">
+                            WORK <br className="md:hidden" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">PRINCIPLES</span>
                         </h2>
-                        <p className="text-slate-400 text-lg font-light">
+                        <p className="text-slate-400 text-base md:text-lg font-light">
                             Collaborative protocols for high-velocity engineering teams.
                         </p>
                     </div>

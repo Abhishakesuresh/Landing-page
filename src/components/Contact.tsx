@@ -31,20 +31,19 @@ export default function Contact() {
     ];
 
     return (
-        <section id="contact" className="py-32 px-6 relative z-10">
+        <section id="contact" className="py-20 md:py-32 px-6 relative z-10">
 
-            {/* Background fade */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/40 to-black pointer-events-none" />
+
 
             <div className="max-w-5xl mx-auto relative z-10">
 
                 {/* Header */}
                 <ScrollAnimation>
-                    <div className="text-center mb-20">
+                    <div className="text-center mb-12 md:mb-20">
                         <h2 className="text-4xl md:text-5xl font-extrabold text-white">
-                            Get in Touch
+                            Get in <br className="md:hidden" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Touch</span>
                         </h2>
-                        <p className="text-slate-400 max-w-xl mx-auto text-lg mt-4">
+                        <p className="text-slate-400 max-w-xl md:mx-auto text-base md:text-lg mt-4">
                             Always open to new opportunities, discussions, and collaborations.
                         </p>
                     </div>

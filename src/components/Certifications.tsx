@@ -31,13 +31,13 @@ const certifications = [
 
 export default function Certifications() {
     return (
-        <section id="certifications" className="py-32 px-6 relative z-10">
+        <section id="certifications" className="py-20 md:py-32 px-6 relative z-10">
             <div className="max-w-5xl mx-auto">
 
                 <ScrollAnimation>
-                    <div className="mb-16">
-                        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
-                            CREDENTIALS <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">DATABASE</span>
+                    <div className="mb-10 md:mb-16 text-center">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">
+                            CREDENTIALS <br className="md:hidden" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">DATABASE</span>
                         </h2>
                     </div>
                 </ScrollAnimation>

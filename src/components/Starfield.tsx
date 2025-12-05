@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface Star {
     x: number;
@@ -12,8 +12,16 @@ interface Star {
 
 const Starfield = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
+        // Detect mobile device
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+
         const canvas = canvasRef.current;
         if (!canvas) return;
 
@@ -22,11 +30,14 @@ const Starfield = () => {
 
         let animationFrameId: number;
         let stars: Star[] = [];
+        let lastTime = 0;
+        const FPS = 30; // Limit to 30 FPS for better performance
+        const frameInterval = 1000 / FPS;
 
-        // Configuration
-        const STAR_COUNT = 400; // Number of stars
-        const SPEED = 0.05; // Speed of movement
-        const DEPTH = 1000; // Depth of the field
+        // Configuration - reduced for mobile
+        const STAR_COUNT = isMobile ? 100 : 200; // Reduced star count
+        const SPEED = 0.03; // Slower speed
+        const DEPTH = 1000;
 
         const resizeCanvas = () => {
             canvas.width = window.innerWidth;
@@ -40,41 +51,44 @@ const Starfield = () => {
                     x: (Math.random() - 0.5) * canvas.width * 2,
                     y: (Math.random() - 0.5) * canvas.height * 2,
                     z: Math.random() * DEPTH,
-                    size: Math.random() * 1.5,
-                    opacity: Math.random(),
+                    size: Math.random() * 1.2,
+                    opacity: Math.random() * 0.8,
                 });
             }
         };
 
-        const draw = () => {
+        const draw = (currentTime: number) => {
             if (!ctx || !canvas) return;
 
-            // Clear canvas with a slight fade for trail effect (optional, currently full clear)
+            // Throttle frame rate
+            const elapsed = currentTime - lastTime;
+            if (elapsed < frameInterval) {
+                animationFrameId = requestAnimationFrame(draw);
+                return;
+            }
+            lastTime = currentTime - (elapsed % frameInterval);
+
+            // Clear canvas
             ctx.fillStyle = "#000000";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Center of the screen
             const cx = canvas.width / 2;
             const cy = canvas.height / 2;
 
             stars.forEach((star) => {
-                // Move star closer
                 star.z -= SPEED * 10;
 
-                // Reset star if it passes the screen
                 if (star.z <= 0) {
                     star.z = DEPTH;
                     star.x = (Math.random() - 0.5) * canvas.width * 2;
                     star.y = (Math.random() - 0.5) * canvas.height * 2;
                 }
 
-                // Project 3D coordinates to 2D
                 const k = 128.0 / star.z;
                 const px = star.x * k + cx;
                 const py = star.y * k + cy;
 
-                // Calculate size and opacity based on depth
-                const size = (1 - star.z / DEPTH) * 2.5 * star.size;
+                const size = (1 - star.z / DEPTH) * 2 * star.size;
                 const opacity = (1 - star.z / DEPTH) * star.opacity;
 
                 if (px >= 0 && px <= canvas.width && py >= 0 && py <= canvas.height) {
@@ -88,26 +102,29 @@ const Starfield = () => {
             animationFrameId = requestAnimationFrame(draw);
         };
 
-        // Initialize
         resizeCanvas();
         initStars();
-        draw();
+        animationFrameId = requestAnimationFrame(draw);
 
-        window.addEventListener("resize", () => {
+        const handleResize = () => {
             resizeCanvas();
             initStars();
-        });
+        };
+
+        window.addEventListener("resize", handleResize);
 
         return () => {
             cancelAnimationFrame(animationFrameId);
-            window.removeEventListener("resize", resizeCanvas);
+            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("resize", checkMobile);
         };
-    }, []);
+    }, [isMobile]);
 
     return (
         <canvas
             ref={canvasRef}
             className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none bg-black"
+            style={{ willChange: "auto" }}
         />
     );
 };

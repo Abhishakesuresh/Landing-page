@@ -22,7 +22,7 @@ const experiences = [
 
 export default function Experience() {
     return (
-        <section id="experience" className="py-32 px-6 relative z-10 overflow-hidden">
+        <section id="experience" className="py-20 md:py-32 px-6 relative z-10 overflow-hidden">
 
             {/* Background Glow */}
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
@@ -30,14 +30,14 @@ export default function Experience() {
             <div className="max-w-5xl mx-auto relative z-10">
 
                 <ScrollAnimation>
-                    <div className="mb-20">
-                        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
-                            PROFESSIONAL{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                    <div className="mb-12 md:mb-20 text-center">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">
+                            PROFESSIONAL <br className="md:hidden" />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
                                 EXPERIENCE
                             </span>
                         </h2>
-                        <p className="text-slate-400 text-lg font-light">
+                        <p className="text-slate-400 text-base md:text-lg font-light">
                             Practical automation experience — delivering stability, speed, and clarity to the testing process.
                         </p>
                     </div>

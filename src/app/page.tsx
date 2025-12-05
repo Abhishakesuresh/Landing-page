@@ -7,12 +7,10 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Impact from "@/components/Impact";
-import Starfield from "@/components/Starfield";
 
 export default function Home() {
   return (
     <main className="min-h-screen relative selection:bg-accent-glow/30 selection:text-white overflow-hidden">
-      <Starfield />
       <Hero />
       <About />
       <Impact />
