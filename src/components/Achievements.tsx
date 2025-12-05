@@ -47,21 +47,19 @@ export default function Achievements() {
 
                     <ul className="space-y-6 relative z-10">
                         {achievements.map((item, idx) => (
-                            <ScrollAnimation key={idx} delay={idx * 0.1}>
-                                <li className="flex items-start gap-6 text-lg font-medium text-slate-300 group cursor-default p-4 rounded-xl hover:bg-white/5 transition-all border border-transparent hover:border-white/5">
-                                    <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 text-sm font-bold flex-shrink-0 border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-black group-hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300 font-mono">
-                                        0{idx + 1}
-                                    </span>
-                                    <div>
-                                        <div className="font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">
-                                            {item.title}
-                                        </div>
-                                        <div className="text-sm text-slate-400 tracking-wide">
-                                            {item.description}
-                                        </div>
+                            <li key={idx} className="flex items-start gap-6 text-lg font-medium text-slate-300 group cursor-default p-4 rounded-xl hover:bg-white/5 transition-all border border-transparent hover:border-white/5">
+                                <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 text-sm font-bold flex-shrink-0 border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-black group-hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300 font-mono">
+                                    0{idx + 1}
+                                </span>
+                                <div>
+                                    <div className="font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">
+                                        {item.title}
                                     </div>
-                                </li>
-                            </ScrollAnimation>
+                                    <div className="text-sm text-slate-400 tracking-wide">
+                                        {item.description}
+                                    </div>
+                                </div>
+                            </li>
                         ))}
                     </ul>
                 </div>

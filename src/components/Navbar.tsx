@@ -77,6 +77,7 @@ export default function Navbar() {
                                     href="https://linkedin.com/in/abhishakesuresh"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label="LinkedIn Profile"
                                     className="text-white/60 hover:text-cyan-400 transition-colors duration-200"
                                 >
                                     <FaLinkedin size={18} />
@@ -85,6 +86,7 @@ export default function Navbar() {
                                     href="https://github.com/abhishakesuresh"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label="GitHub Profile"
                                     className="text-white/60 hover:text-purple-400 transition-colors duration-200"
                                 >
                                     <FaGithub size={18} />
@@ -120,7 +122,7 @@ export default function Navbar() {
                         </div>
 
                         {/* Mobile Toggle */}
-                        <button className="md:hidden text-white" onClick={() => setMenuOpen(true)}>
+                        <button className="md:hidden text-white" onClick={() => setMenuOpen(true)} aria-label="Open menu">
                             <FaBars size={20} />
                         </button>
                     </div>
@@ -149,7 +151,7 @@ export default function Navbar() {
                             {/* Menu Header */}
                             <div className="flex justify-between items-center mb-8">
                                 <span className="text-lg font-semibold text-white">Menu</span>
-                                <button onClick={() => setMenuOpen(false)} className="text-secondary hover:text-white">
+                                <button onClick={() => setMenuOpen(false)} className="text-secondary hover:text-white" aria-label="Close menu">
                                     <FaTimes size={20} />
                                 </button>
                             </div>
@@ -169,10 +171,10 @@ export default function Navbar() {
 
                                 {/* Mobile Social Icons */}
                                 <div className="flex items-center gap-6 mt-4 pt-4 border-t border-white/10">
-                                    <a href="https://linkedin.com/in/abhishakesuresh" className="text-white/60 hover:text-cyan-400">
+                                    <a href="https://linkedin.com/in/abhishakesuresh" aria-label="LinkedIn Profile" className="text-white/60 hover:text-cyan-400">
                                         <FaLinkedin size={24} />
                                     </a>
-                                    <a href="https://github.com/abhishakesuresh" className="text-white/60 hover:text-purple-400">
+                                    <a href="https://github.com/abhishakesuresh" aria-label="GitHub Profile" className="text-white/60 hover:text-purple-400">
                                         <FaGithub size={24} />
                                     </a>
                                 </div>

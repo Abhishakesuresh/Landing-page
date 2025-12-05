@@ -127,13 +127,13 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="pt-8 sm:pt-12 flex items-center justify-center gap-8"
                 >
-                    <a href="https://linkedin.com/in/abhishakesuresh" target="_blank" className="text-secondary hover:text-white transition-colors">
+                    <a href="https://linkedin.com/in/abhishakesuresh" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="text-secondary hover:text-white transition-colors">
                         <FaLinkedin size={26} />
                     </a>
-                    <a href="https://github.com/abhishakesuresh" target="_blank" className="text-secondary hover:text-white transition-colors">
+                    <a href="https://github.com/abhishakesuresh" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="text-secondary hover:text-white transition-colors">
                         <FaGithub size={26} />
                     </a>
-                    <a href="mailto:abhishake.suresh@gmail.com" className="text-secondary hover:text-white transition-colors">
+                    <a href="mailto:abhishake.suresh@gmail.com" aria-label="Send Email" className="text-secondary hover:text-white transition-colors">
                         <FaEnvelope size={26} />
                     </a>
                 </motion.div>

@@ -76,7 +76,7 @@ export default function Contact() {
 
                                     {/* Text */}
                                     <div>
-                                        <p className="text-xs text-slate-500 uppercase tracking-wider font-medium mb-1">
+                                        <p className="text-xs text-slate-400 uppercase tracking-wider font-medium mb-1">
                                             {item.label}
                                         </p>
                                         <p className="text-sm text-white font-medium group-hover:text-cyan-400 transition-colors">

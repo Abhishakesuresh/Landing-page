@@ -55,7 +55,7 @@ export default function Experience() {
                                     <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
                                         {exp.company}
                                     </h3>
-                                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-500 font-mono">
+                                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-400 font-mono">
                                         <span className="text-cyan-400 font-semibold">{exp.role}</span>
                                         <span className="hidden sm:inline text-slate-700">|</span>
                                         <span>{exp.period}</span>

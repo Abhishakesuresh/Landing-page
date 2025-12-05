@@ -43,7 +43,7 @@ export default function Footer() {
                         <h3 className="text-base md:text-lg font-semibold text-white tracking-tight">
                             Abhishake Suresh
                         </h3>
-                        <p className="text-slate-500 text-xs md:text-sm hidden md:block">
+                        <p className="text-slate-400 text-xs md:text-sm hidden md:block">
                             QA Engineer • Test Automation Specialist
                         </p>
                     </div>
