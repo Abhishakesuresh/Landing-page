@@ -5,25 +5,60 @@ import { FaGithub, FaExternalLinkAlt, FaCode, FaTerminal } from "react-icons/fa"
 
 const projects = [
     {
-        title: "Hybrid UI + API Automation Framework",
-        description: "A modular POM-based framework supporting parallel runs, environment configs, and Allure reporting.",
-        tech: ["Java", "Selenium", "TestNG", "Jenkins"],
+        title: "Enterprise Automation Framework",
+        subtitle: "(Flagship Project)",
+        description: "A scalable, modular automation framework supporting UI, API, and CI execution.",
+        tech: ["Java", "Selenium", "TestNG", "Maven", "GitHub Actions", "Docker"],
+        features: [
+            "Page Object Model + Data-driven design",
+            "API integration layer (REST Assured)",
+            "Centralized reporting (Allure)",
+            "Parallel test execution",
+            "Dockerized test runs"
+        ],
+        impact: [
+            "Cut execution time by 60%",
+            "Increased release reliability",
+            "Eliminated flaky tests across 3 modules"
+        ],
         link: "#",
-        status: "DEPLOYED"
+        status: "FLAGSHIP"
     },
     {
-        title: "REST API Automation Suite",
-        description: "Comprehensive API suite covering functional, schema, and negative validations.",
-        tech: ["REST Assured", "Postman", "Java"],
+        title: "CI/CD Pipeline",
+        subtitle: "for Automated Testing",
+        description: "A fully automated pipeline that triggers tests on every commit.",
+        tech: ["GitHub Actions", "Docker", "Maven", "Linux"],
+        features: [
+            "Build → Test → Report → Deploy",
+            "Parallel matrix execution",
+            "Docker container execution",
+            "Slack/Email notifications"
+        ],
+        impact: [
+            "45% faster deployment cycles",
+            "Fully automated QA approvals"
+        ],
         link: "#",
         status: "ACTIVE"
     },
     {
-        title: "Dockerized CI/CD Execution Pipeline",
-        description: "Automated pipeline for build → test → report using containerized execution.",
-        tech: ["Docker", "Jenkins", "GitHub Actions", "AWS"],
+        title: "API Automation Suite",
+        subtitle: "",
+        description: "A robust API test suite covering Auth, Integrations, Business workflows, and Error handling.",
+        tech: ["REST Assured", "Java", "JSON Schema Validator"],
+        features: [
+            "Authentication flows",
+            "Integration testing",
+            "Business logic validation",
+            "Error handling scenarios"
+        ],
+        impact: [
+            "90% stability improvement",
+            "Detects breaking changes instantly via CI"
+        ],
         link: "#",
-        status: "ONLINE"
+        status: "DEPLOYED"
     }
 ];
 
@@ -39,16 +74,13 @@ export default function Projects() {
                                 FEATURED <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">PROJECTS</span>
                             </h2>
                             <p className="text-slate-400 max-w-2xl text-lg font-light">
-                                Scalable solutions engineered for reliability.
+                                With depth + impact + tech stack
                             </p>
-                        </div>
-                        <div className="hidden md:block px-4 py-2 bg-slate-900/50 border border-slate-800 rounded font-mono text-xs text-slate-500">
-                            &gt; SELECT * FROM PORTFOLIO WHERE TYPE='ENGINEERING'
                         </div>
                     </div>
                 </ScrollAnimation>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
                         <ScrollAnimation key={index} delay={index * 0.1}>
                             <div className="glass-panel p-0 h-full flex flex-col group relative overflow-hidden hover:border-purple-500/30">
@@ -79,30 +111,61 @@ export default function Projects() {
                                             </a>
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors font-mono">
+                                        <h3 className="text-xl font-bold text-white mb-1 group-hover:text-purple-400 transition-colors font-mono">
                                             {project.title}
                                         </h3>
-                                        <p className="text-slate-400 leading-relaxed mb-8 text-sm">
+                                        {project.subtitle && (
+                                            <p className="text-sm text-cyan-400 mb-3 font-mono">{project.subtitle}</p>
+                                        )}
+                                        <p className="text-slate-400 leading-relaxed mb-6 text-sm">
                                             {project.description}
                                         </p>
-                                    </div>
 
-                                    <div>
-                                        <div className="flex flex-wrap gap-2 mb-6">
-                                            {project.tech.map((tech) => (
-                                                <span key={tech} className="px-2 py-1 bg-slate-900 text-slate-500 text-[10px] font-bold uppercase tracking-wider rounded border border-slate-800 font-mono group-hover:border-purple-500/20 group-hover:text-purple-300 transition-colors">
-                                                    {tech}
-                                                </span>
-                                            ))}
+                                        {/* Tech Stack */}
+                                        <div className="mb-6">
+                                            <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Tech Stack</h4>
+                                            <div className="flex flex-wrap gap-2">
+                                                {project.tech.map((tech) => (
+                                                    <span key={tech} className="px-2 py-1 bg-slate-900 text-slate-500 text-[10px] font-bold uppercase tracking-wider rounded border border-slate-800 font-mono group-hover:border-purple-500/20 group-hover:text-purple-300 transition-colors">
+                                                        {tech}
+                                                    </span>
+                                                ))}
+                                            </div>
                                         </div>
 
-                                        <a
-                                            href={project.link}
-                                            className="inline-flex items-center gap-2 text-sm font-bold text-slate-300 hover:text-purple-400 transition-colors group/link font-mono"
-                                        >
-                                            &gt; VIEW_SOURCE_CODE <span className="group-hover/link:translate-x-1 transition-transform">_</span>
-                                        </a>
+                                        {/* Features */}
+                                        <div className="mb-6">
+                                            <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Key Features</h4>
+                                            <ul className="space-y-1">
+                                                {project.features.map((feature, idx) => (
+                                                    <li key={idx} className="text-xs text-slate-400 flex items-start gap-2">
+                                                        <span className="text-cyan-500 mt-0.5">▸</span>
+                                                        <span>{feature}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        {/* Impact */}
+                                        <div className="mb-6">
+                                            <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">Impact</h4>
+                                            <ul className="space-y-1">
+                                                {project.impact.map((item, idx) => (
+                                                    <li key={idx} className="text-xs text-slate-300 flex items-start gap-2">
+                                                        <span className="text-emerald-400 mt-0.5">✓</span>
+                                                        <span>{item}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
                                     </div>
+
+                                    <a
+                                        href={project.link}
+                                        className="inline-flex items-center gap-2 text-sm font-bold text-slate-300 hover:text-purple-400 transition-colors group/link font-mono"
+                                    >
+                                        &gt; VIEW_SOURCE_CODE <span className="group-hover/link:translate-x-1 transition-transform">_</span>
+                                    </a>
                                 </div>
                             </div>
                         </ScrollAnimation>

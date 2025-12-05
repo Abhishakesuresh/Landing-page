@@ -1,82 +1,132 @@
 "use client";
 
 import ScrollAnimation from "./ScrollAnimation";
-import { FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaGithub, FaArrowRight, FaFileDownload } from "react-icons/fa";
 
 export default function Contact() {
-    return (
-        <section id="contact" className="py-32 px-6 relative z-10 border-t border-slate-900">
-            <div className="max-w-7xl mx-auto">
 
+    const contactItems = [
+        {
+            icon: <FaEnvelope />,
+            label: "Email",
+            value: "abhishakesuresh06@gmail.com",
+            href: "mailto:abhishakesuresh06@gmail.com",
+            gradient: "from-cyan-400 to-blue-500"
+        },
+        {
+            icon: <FaLinkedin />,
+            label: "LinkedIn",
+            value: "linkedin.com/in/abhishakesuresh",
+            href: "https://www.linkedin.com/in/abhishakesuresh/",
+            gradient: "from-blue-500 to-purple-500"
+        },
+        {
+            icon: <FaGithub />,
+            label: "GitHub",
+            value: "github.com/abhishakesuresh",
+            href: "https://github.com/abhishakesuresh",
+            gradient: "from-purple-500 to-pink-500"
+        },
+        {
+            icon: <FaFileDownload />,
+            label: "Resume",
+            value: "Download Resume",
+            href: "/resume.pdf",
+            gradient: "from-emerald-400 to-teal-500"
+        }
+    ];
+
+    return (
+        <section id="contact" className="py-32 px-6 relative z-10">
+
+            {/* Background fade */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/40 to-black pointer-events-none" />
+
+            <div className="max-w-5xl mx-auto relative z-10">
+
+                {/* Header */}
                 <ScrollAnimation>
-                    <div className="mb-20 text-center">
-                        <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
-                            ESTABLISH <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">CONNECTION</span>
+                    <div className="text-center mb-20">
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-white">
+                            Get in Touch
                         </h2>
-                        <p className="text-slate-400 max-w-2xl mx-auto text-lg font-light">
-                            Open to freelance, full-time, and hybrid/remote automation roles.
+                        <p className="text-slate-400 max-w-xl mx-auto text-lg mt-4">
+                            Always open to new opportunities, discussions, and collaborations.
                         </p>
                     </div>
                 </ScrollAnimation>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {[
-                        {
-                            icon: <FaEnvelope />,
-                            label: "Email",
-                            value: "abhishakesuresh06@gmail.com",
-                            href: "mailto:abhishakesuresh06@gmail.com",
-                            color: "text-red-400",
-                            border: "hover:border-red-500/50",
-                            shadow: "hover:shadow-red-500/20"
-                        },
-                        {
-                            icon: <FaLinkedin />,
-                            label: "LinkedIn",
-                            value: "Abhishake Suresh",
-                            href: "https://www.linkedin.com/in/abhishakesuresh/",
-                            color: "text-blue-400",
-                            border: "hover:border-blue-500/50",
-                            shadow: "hover:shadow-blue-500/20"
-                        },
-                        {
-                            icon: <FaGithub />,
-                            label: "GitHub",
-                            value: "@abhishakesuresh",
-                            href: "https://github.com/abhishakesuresh",
-                            color: "text-purple-400",
-                            border: "hover:border-purple-500/50",
-                            shadow: "hover:shadow-purple-500/20"
-                        },
-                        {
-                            icon: <FaMapMarkerAlt />,
-                            label: "Location",
-                            value: "Chennai, India",
-                            href: "https://www.google.com/maps/place/Chennai",
-                            color: "text-emerald-400",
-                            border: "hover:border-emerald-500/50",
-                            shadow: "hover:shadow-emerald-500/20"
-                        }
-                    ].map((item, idx) => (
-                        <ScrollAnimation key={idx} delay={idx * 0.1}>
+                {/* Main CTA */}
+                <ScrollAnimation delay={0.1}>
+                    <div className="rounded-2xl p-10 mb-20 bg-slate-900/40 border border-white/10 backdrop-blur-xl shadow-xl shadow-black/20">
+
+                        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+
+                            <div>
+                                <h3 className="text-3xl font-semibold text-white mb-3">
+                                    Let’s collaborate or connect
+                                </h3>
+                                <p className="text-slate-400 max-w-md leading-relaxed">
+                                    Whether you have an opportunity to discuss or a question about automation,
+                                    feel free to reach out.
+                                </p>
+                            </div>
+
+                            <a
+                                href="mailto:abhishakesuresh06@gmail.com"
+                                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-semibold hover:scale-105 transition-transform"
+                            >
+                                Contact Me
+                                <FaArrowRight size={14} />
+                            </a>
+
+                        </div>
+                    </div>
+                </ScrollAnimation>
+
+                {/* Contact Cards — Clean Minimal Design */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {contactItems.map((item, idx) => (
+                        <ScrollAnimation key={idx} delay={0.2 + idx * 0.1}>
                             <a
                                 href={item.href}
                                 target="_blank"
-                                className={`glass-panel p-8 flex flex-col items-center text-center h-full group hover:-translate-y-2 transition-all duration-300 ${item.border} hover:shadow-lg`}
+                                rel="noopener noreferrer"
+                                className="group block p-6 rounded-xl bg-white/[0.03] border border-white/10 
+                                hover:bg-white/[0.06] hover:border-white/20 hover:scale-[1.02]
+                                transition-all duration-300 ease-out"
                             >
-                                <div className={`w-16 h-16 rounded-2xl bg-slate-900 flex items-center justify-center text-3xl mb-6 border border-slate-800 ${item.color} group-hover:scale-110 transition-transform duration-300 shadow-inner`}>
-                                    {item.icon}
+                                <div className="flex items-center gap-4">
+                                    {/* Icon */}
+                                    <div
+                                        className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl
+                                        bg-gradient-to-br ${item.gradient} text-white shadow-lg 
+                                        group-hover:shadow-xl group-hover:scale-105 transition-all duration-300`}
+                                    >
+                                        {item.icon}
+                                    </div>
+
+                                    {/* Text */}
+                                    <div>
+                                        <p className="text-xs text-slate-500 uppercase tracking-wider font-medium mb-1">
+                                            {item.label}
+                                        </p>
+                                        <p className="text-sm text-white font-medium group-hover:text-cyan-400 transition-colors">
+                                            {item.value}
+                                        </p>
+                                    </div>
                                 </div>
-                                <span className="text-xs font-bold text-slate-500 uppercase tracking-[0.15em] mb-3 font-mono">
-                                    {item.label}
-                                </span>
-                                <span className="text-sm font-bold text-slate-200 break-all group-hover:text-white transition-colors font-mono">
-                                    {item.value}
-                                </span>
                             </a>
                         </ScrollAnimation>
                     ))}
                 </div>
+
+                {/* Availability */}
+                <ScrollAnimation delay={0.5}>
+                    <div className="mt-16 text-center text-slate-400 text-sm">
+                        Open to opportunities worldwide
+                    </div>
+                </ScrollAnimation>
 
             </div>
         </section>

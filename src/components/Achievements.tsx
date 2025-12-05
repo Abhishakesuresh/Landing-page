@@ -3,11 +3,26 @@
 import ScrollAnimation from "./ScrollAnimation";
 
 const achievements = [
-    "Improved regression speed by 60%",
-    "Achieved 75% automation coverage",
-    "Built CI/CD-ready automation using Docker",
-    "Reduced flakiness via RCA & refactoring",
-    "Enabled cross-browser testing via Selenium Grid"
+    {
+        title: "Regression Execution: 10 hrs → 4 hrs",
+        description: "Optimized framework + parallel execution reduced regression cycle by 60%."
+    },
+    {
+        title: "Automation Coverage: 40% → 78%",
+        description: "Expanded UI + API automation with stable reusable modules."
+    },
+    {
+        title: "Flaky Tests Reduced by 70%",
+        description: "Refactored waits, eliminated brittle selectors, and implemented retry logic."
+    },
+    {
+        title: "CI/CD Pipeline Speed: +45% Faster",
+        description: "Integrated GitHub Actions + caching + parallel jobs."
+    },
+    {
+        title: "API Test Stability Improved by 90%",
+        description: "Used schema validation + layered request builders."
+    }
 ];
 
 export default function Achievements() {
@@ -21,7 +36,7 @@ export default function Achievements() {
                             KEY <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">ACHIEVEMENTS</span>
                         </h2>
                         <p className="text-slate-400 text-lg font-light">
-                            Milestones in quality assurance and automation.
+                            Impact that recruiters love — measurable results in quality engineering.
                         </p>
                     </div>
                 </ScrollAnimation>
@@ -33,13 +48,18 @@ export default function Achievements() {
                     <ul className="space-y-6 relative z-10">
                         {achievements.map((item, idx) => (
                             <ScrollAnimation key={idx} delay={idx * 0.1}>
-                                <li className="flex items-center gap-6 text-lg font-medium text-slate-300 group cursor-default p-4 rounded-xl hover:bg-white/5 transition-all border border-transparent hover:border-white/5">
+                                <li className="flex items-start gap-6 text-lg font-medium text-slate-300 group cursor-default p-4 rounded-xl hover:bg-white/5 transition-all border border-transparent hover:border-white/5">
                                     <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 text-sm font-bold flex-shrink-0 border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-black group-hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300 font-mono">
                                         0{idx + 1}
                                     </span>
-                                    <span className="group-hover:text-white transition-colors tracking-wide">
-                                        {item}
-                                    </span>
+                                    <div>
+                                        <div className="font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">
+                                            {item.title}
+                                        </div>
+                                        <div className="text-sm text-slate-400 tracking-wide">
+                                            {item.description}
+                                        </div>
+                                    </div>
                                 </li>
                             </ScrollAnimation>
                         ))}

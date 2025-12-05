@@ -4,32 +4,54 @@ import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
     return (
-        <footer className="py-12 relative z-10">
-            <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+        <footer className="py-16 border-t border-white/10 bg-black relative z-10">
+            <div className="max-w-5xl mx-auto px-6 flex flex-col items-center gap-6">
 
-                <div className="text-center md:text-left">
-                    <h3 className="text-xl font-bold text-white font-mono mb-2">
-                        <span className="text-cyan-500">&lt;</span>
-                        AS_Labs
-                        <span className="text-cyan-500">/&gt;</span>
+                {/* Name / Branding */}
+                <div className="text-center">
+                    <h3 className="text-xl font-semibold text-white tracking-tight">
+                        Abhishake Suresh
                     </h3>
-                    <p className="text-slate-500 text-sm">
-                        © {new Date().getFullYear()} Abhishake Suresh. All systems nominal.
+                    <p className="text-slate-500 text-sm mt-2">
+                        © {new Date().getFullYear()} All rights reserved.
                     </p>
                 </div>
 
-                <div className="flex gap-6">
-                    <a href="https://linkedin.com/in/abhishakesuresh" target="_blank" className="text-slate-500 hover:text-cyan-400 transition-colors">
-                        <FaLinkedin size={20} />
+                {/* Social Icons */}
+                <div className="flex gap-8">
+                    <a
+                        href="https://linkedin.com/in/abhishakesuresh"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-400 hover:text-white transition-colors"
+                    >
+                        <FaLinkedin size={22} />
                     </a>
-                    <a href="https://github.com/abhishakesuresh" target="_blank" className="text-slate-500 hover:text-purple-400 transition-colors">
-                        <FaGithub size={20} />
+
+                    <a
+                        href="https://github.com/abhishakesuresh"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-400 hover:text-white transition-colors"
+                    >
+                        <FaGithub size={22} />
                     </a>
-                    <a href="mailto:abhishakesuresh06@gmail.com" className="text-slate-500 hover:text-red-400 transition-colors">
-                        <FaEnvelope size={20} />
+
+                    <a
+                        href="mailto:abhishakesuresh06@gmail.com"
+                        className="text-slate-400 hover:text-white transition-colors"
+                    >
+                        <FaEnvelope size={22} />
                     </a>
                 </div>
 
+                {/* Subtle line */}
+                <div className="w-full h-px bg-white/5 mt-4" />
+
+                {/* Footer Note */}
+                <p className="text-xs text-slate-600 text-center mt-2 tracking-wide">
+                    Built with clean design & minimalism.
+                </p>
             </div>
         </footer>
     );
