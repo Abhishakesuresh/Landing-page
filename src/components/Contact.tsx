@@ -27,13 +27,7 @@ export default function Contact() {
             href: "https://github.com/abhishakesuresh",
             gradient: "from-purple-500 to-pink-500"
         },
-        {
-            icon: <FaFileDownload />,
-            label: "Resume",
-            value: "Download Resume",
-            href: "/resume.pdf",
-            gradient: "from-emerald-400 to-teal-500"
-        }
+
     ];
 
     return (
@@ -57,32 +51,7 @@ export default function Contact() {
                 </ScrollAnimation>
 
                 {/* Main CTA */}
-                <ScrollAnimation delay={0.1}>
-                    <div className="rounded-2xl p-10 mb-20 bg-slate-900/40 border border-white/10 backdrop-blur-xl shadow-xl shadow-black/20">
 
-                        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-
-                            <div>
-                                <h3 className="text-3xl font-semibold text-white mb-3">
-                                    Let’s collaborate or connect
-                                </h3>
-                                <p className="text-slate-400 max-w-md leading-relaxed">
-                                    Whether you have an opportunity to discuss or a question about automation,
-                                    feel free to reach out.
-                                </p>
-                            </div>
-
-                            <a
-                                href="mailto:abhishakesuresh06@gmail.com"
-                                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-semibold hover:scale-105 transition-transform"
-                            >
-                                Contact Me
-                                <FaArrowRight size={14} />
-                            </a>
-
-                        </div>
-                    </div>
-                </ScrollAnimation>
 
                 {/* Contact Cards — Clean Minimal Design */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -121,12 +90,7 @@ export default function Contact() {
                     ))}
                 </div>
 
-                {/* Availability */}
-                <ScrollAnimation delay={0.5}>
-                    <div className="mt-16 text-center text-slate-400 text-sm">
-                        Open to opportunities worldwide
-                    </div>
-                </ScrollAnimation>
+
 
             </div>
         </section>
