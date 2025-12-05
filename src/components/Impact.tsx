@@ -43,7 +43,7 @@ export default function Impact() {
                 {/* Header */}
                 <ScrollAnimation>
                     <div className="text-center mb-12 md:mb-20">
-                        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
                             MEASURABLE <br className="md:hidden" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
                                 IMPACT

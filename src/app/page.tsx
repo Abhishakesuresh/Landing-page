@@ -1,12 +1,15 @@
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
-import Achievements from "@/components/Achievements";
-import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import Impact from "@/components/Impact";
+
+// Lazy load below-fold components to improve initial load time
+const About = dynamic(() => import("@/components/About"), { ssr: true });
+const Impact = dynamic(() => import("@/components/Impact"), { ssr: true });
+const Skills = dynamic(() => import("@/components/Skills"), { ssr: true });
+const Experience = dynamic(() => import("@/components/Experience"), { ssr: true });
+const Projects = dynamic(() => import("@/components/Projects"), { ssr: true });
+const Achievements = dynamic(() => import("@/components/Achievements"), { ssr: true });
+const Contact = dynamic(() => import("@/components/Contact"), { ssr: true });
+const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
 
 export default function Home() {
   return (

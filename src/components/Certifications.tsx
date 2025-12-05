@@ -36,7 +36,7 @@ export default function Certifications() {
 
                 <ScrollAnimation>
                     <div className="mb-10 md:mb-16 text-center">
-                        <h2 className="text-3xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">
+                        <h2 className="text-4xl md:text-5xl font-black text-white mb-4 md:mb-6 tracking-tight">
                             CREDENTIALS <br className="md:hidden" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">DATABASE</span>
                         </h2>
                     </div>

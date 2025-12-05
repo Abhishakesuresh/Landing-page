@@ -69,7 +69,7 @@ export default function Projects() {
 
                 <ScrollAnimation>
                     <div className="mb-12 md:mb-20 text-center">
-                        <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight">
+                        <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
                             FEATURED <br className="md:hidden" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">PROJECTS</span>
                         </h2>
                         <p className="text-slate-400 max-w-2xl md:mx-auto text-base md:text-lg font-light">

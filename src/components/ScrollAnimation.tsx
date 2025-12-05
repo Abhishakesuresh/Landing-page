@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import clsx from "clsx";
 
 interface ScrollAnimationProps {
@@ -13,7 +13,6 @@ interface ScrollAnimationProps {
     blur?: boolean;
     duration?: number;
     once?: boolean;
-    stagger?: number;
 }
 
 export default function ScrollAnimation({
@@ -23,15 +22,23 @@ export default function ScrollAnimation({
     direction = "up",
     scale = false,
     blur = false,
-    duration = 0.8,
+    duration = 0.6,
     once = true,
-    stagger = 0,
 }: ScrollAnimationProps) {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once, margin: "-10% 0px" });
+    const isInView = useInView(ref, { once, margin: "-5% 0px" });
+    const [isMobile, setIsMobile] = useState(false);
 
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 768);
+    }, []);
+
+    // Simpler, faster animations on mobile
     const getInitial = () => {
-        const initial: any = { opacity: 0 };
+        if (isMobile) {
+            return { opacity: 0, y: 20 };
+        }
+        const initial: Record<string, number | string> = { opacity: 0 };
         if (direction === "up") initial.y = 40;
         if (direction === "down") initial.y = -40;
         if (direction === "left") initial.x = 40;
@@ -42,7 +49,10 @@ export default function ScrollAnimation({
     };
 
     const getAnimate = () => {
-        const animate: any = { opacity: 1, y: 0, x: 0 };
+        if (isMobile) {
+            return { opacity: 1, y: 0 };
+        }
+        const animate: Record<string, number | string> = { opacity: 1, y: 0, x: 0 };
         if (scale) animate.scale = 1;
         if (blur) animate.filter = "blur(0px)";
         return animate;
@@ -54,12 +64,11 @@ export default function ScrollAnimation({
             initial={getInitial()}
             animate={isInView ? getAnimate() : getInitial()}
             transition={{
-                duration,
-                delay,
-                ease: [0.16, 1, 0.3, 1],
-                staggerChildren: stagger,
+                duration: isMobile ? 0.4 : duration,
+                delay: isMobile ? delay * 0.5 : delay,
+                ease: [0.25, 0.1, 0.25, 1],
             }}
-            className={clsx("will-change-transform", className)}
+            className={clsx(className)}
         >
             {children}
         </motion.div>
