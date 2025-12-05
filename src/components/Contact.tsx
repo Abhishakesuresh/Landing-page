@@ -9,21 +9,21 @@ export default function Contact() {
         {
             icon: <FaEnvelope />,
             label: "Email",
-            value: "abhishakesuresh06@gmail.com",
-            href: "mailto:abhishakesuresh06@gmail.com",
+            value: "abhishake.suresh@gmail.com",
+            href: "mailto:abhishake.suresh@gmail.com",
             gradient: "from-cyan-400 to-blue-500"
         },
         {
             icon: <FaLinkedin />,
             label: "LinkedIn",
-            value: "linkedin.com/in/abhishakesuresh",
+            value: "Abhishake Suresh",
             href: "https://www.linkedin.com/in/abhishakesuresh/",
             gradient: "from-blue-500 to-purple-500"
         },
         {
             icon: <FaGithub />,
             label: "GitHub",
-            value: "github.com/abhishakesuresh",
+            value: "Abhishake Suresh",
             href: "https://github.com/abhishakesuresh",
             gradient: "from-purple-500 to-pink-500"
         },

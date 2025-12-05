@@ -20,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased`} suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth bg-black" suppressHydrationWarning>
+      <body className={`${inter.variable} antialiased bg-black min-h-screen`} suppressHydrationWarning>
         <Navbar />
         {children}
       </body>
