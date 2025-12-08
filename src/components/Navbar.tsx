@@ -39,6 +39,22 @@ export default function Navbar() {
         { name: "Contact", href: "#contact" },
     ];
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: -20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    };
+
     return (
         <>
             <motion.nav
@@ -48,31 +64,41 @@ export default function Navbar() {
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}
             >
                 <div className="max-w-[1200px] mx-auto px-6">
-                    <div className="flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300 bg-surface/70 backdrop-blur-xl border border-white/10 shadow-lg">
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        variants={containerVariants}
+                        className="flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300 bg-surface/70 backdrop-blur-xl border border-white/10 shadow-lg"
+                    >
 
                         {/* Brand */}
-                        <a href="#" className="text-lg font-semibold tracking-tight text-white hover:opacity-80 transition-opacity">
+                        <motion.a
+                            variants={itemVariants}
+                            href="#"
+                            className="text-lg font-semibold tracking-tight text-white hover:opacity-80 transition-opacity"
+                        >
                             Abhishake Suresh
-                        </a>
+                        </motion.a>
 
                         {/* Desktop Navigation */}
-                        <div className="hidden md:flex items-center gap-6">
+                        <motion.div variants={containerVariants} className="hidden md:flex items-center gap-6">
                             {navLinks.map((link) => (
-                                <a
+                                <motion.a
                                     key={link.name}
                                     href={link.href}
+                                    variants={itemVariants}
                                     className="text-sm font-medium text-white/80 hover:text-white transition-colors duration-200"
                                 >
                                     {link.name}
-                                </a>
+                                </motion.a>
                             ))}
-                        </div>
+                        </motion.div>
 
                         {/* Desktop Social Icons + Resume CTA */}
-                        <div className="hidden md:flex items-center gap-4">
+                        <motion.div variants={containerVariants} className="hidden md:flex items-center gap-4">
 
                             {/* Social Icons */}
-                            <div className="flex items-center gap-3 pr-4 border-r border-white/10">
+                            <motion.div variants={itemVariants} className="flex items-center gap-3 pr-4 border-r border-white/10">
                                 <a
                                     href="https://linkedin.com/in/abhishakesuresh"
                                     target="_blank"
@@ -91,10 +117,11 @@ export default function Navbar() {
                                 >
                                     <FaGithub size={18} />
                                 </a>
-                            </div>
+                            </motion.div>
 
                             {/* Resume Button - With Animation */}
                             <motion.a
+                                variants={itemVariants}
                                 href="/resume.pdf"
                                 download
                                 onClick={handleDownload}
@@ -119,13 +146,18 @@ export default function Navbar() {
                                     "Resume"
                                 )}
                             </motion.a>
-                        </div>
+                        </motion.div>
 
                         {/* Mobile Toggle */}
-                        <button className="md:hidden text-white" onClick={() => setMenuOpen(true)} aria-label="Open menu">
+                        <motion.button
+                            variants={itemVariants}
+                            className="md:hidden text-white"
+                            onClick={() => setMenuOpen(true)}
+                            aria-label="Open menu"
+                        >
                             <FaBars size={20} />
-                        </button>
-                    </div>
+                        </motion.button>
+                    </motion.div>
                 </div>
             </motion.nav>
 
