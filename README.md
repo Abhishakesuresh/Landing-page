@@ -9,7 +9,7 @@ A modern, performant portfolio website built with Next.js, showcasing my skills 
 
 ## 🌐 Live Demo
 
-**[abhishakesureshqa.netlify.app](https://abhishakesuresh.netlify.app/)**
+**[abhishakesuresh.netlify.app](https://abhishakesuresh.netlify.app/)**
 
 ## 📸 Preview
 
