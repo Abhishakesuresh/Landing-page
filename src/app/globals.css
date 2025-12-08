@@ -20,9 +20,14 @@ html {
 
 @layer base {
   body {
-    @apply text-primary antialiased selection:bg-accent-glow/30 selection:text-white;
+    @apply text-primary antialiased;
     font-feature-settings: "cv05", "cv11", "ss01";
     background-color: #000000;
+  }
+
+  ::selection {
+    background-color: rgba(41, 151, 255, 0.3);
+    color: white;
   }
 
   h1,
