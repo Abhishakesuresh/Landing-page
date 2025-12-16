@@ -68,7 +68,7 @@ export default function Navbar() {
                         initial="hidden"
                         animate="visible"
                         variants={containerVariants}
-                        className="flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300 bg-surface/70 backdrop-blur-xl border border-white/10 shadow-lg"
+                        className="flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300 bg-surface/70 backdrop-blur-xl shadow-lg"
                     >
 
                         {/* Brand */}
