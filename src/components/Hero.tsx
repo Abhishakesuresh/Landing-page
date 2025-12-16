@@ -22,7 +22,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 pt-32 sm:pt-20 overflow-hidden">
+        <section className="relative min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 pt-32 overflow-hidden">
 
             <div className="relative max-w-5xl mx-auto text-center space-y-8 sm:space-y-10 z-10">
 
