@@ -63,12 +63,12 @@ export default function Navbar() {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}
             >
-                <div className="max-w-[1200px] mx-auto px-6">
+                <div className="max-w-[1200px] mx-auto px-4 md:px-6">
                     <motion.div
                         initial="hidden"
                         animate="visible"
                         variants={containerVariants}
-                        className="flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300 bg-surface/70 backdrop-blur-xl shadow-lg"
+                        className="flex items-center justify-between px-4 py-3 md:px-6 rounded-full transition-all duration-300 bg-surface/70 backdrop-blur-xl shadow-lg"
                     >
 
                         {/* Brand */}
